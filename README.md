@@ -1,4 +1,9 @@
-# Gerenciador de Tarefas - Atividade de Debugging 🐛
+# 🎯 Gerenciador de Tarefas - Atividade de Debugging com IA
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/cassiandrei/django-task-manager-debugging)
+[![Django](https://img.shields.io/badge/Django-5.2+-green)](https://www.djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Educational-yellow)](LICENSE)
 
 ## 📋 Descrição
 Este é um projeto Django simples de gerenciamento de tarefas criado para fins **educacionais**. O projeto contém **bugs intencionais** que devem ser corrigidos pelos alunos usando ferramentas de IA como auxílio.
