@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Tarefa - Gerenciador de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-link">
+        <a href="{% url 'task_list' %}">← Voltar para Lista de Tarefas</a>
+    </div>
+
+    <h1>Nova Tarefa</h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border-radius: 5px;">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="title">Título *</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Descrição</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+
+        <label for="priority">Prioridade</label>
+        <select id="priority" name="priority">
+            <option value="low">Baixa</option>
+            <option value="medium" selected>Média</option>
+            <option value="high">Alta</option>
+        </select>
+
+        <label for="due_date">Data de Vencimento</label>
+        <input type="datetime-local" id="due_date" name="due_date">
+
+        <button type="submit">Criar Tarefa</button>
+    </form>
+</body>
+
+</html>
