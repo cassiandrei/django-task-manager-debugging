@@ -25,14 +25,23 @@ Este é um projeto Django simples de gerenciamento de tarefas criado para fins *
 
 ### 1. Configuração Inicial
 ```bash
-# Ative o ambiente virtual (já configurado)
-# No VSCode, o ambiente já está ativo
+# Crie um ambiente virtual Python
+python3 -m venv .venv
 
-# Instale as dependências (já instaladas)
-pip install django pytest pytest-django
+# Ative o ambiente virtual
+# No macOS/Linux:
+source .venv/bin/activate
+# No Windows:
+# .venv\Scripts\activate
+
+# Instale as dependências
+pip3 install -r requirements.txt
 
 # Execute as migrações
 python manage.py migrate
+
+# Crie o usuário de teste e tarefas de exemplo
+python create_test_user.py
 ```
 
 ### 2. Executar o Servidor
